@@ -9,8 +9,8 @@ import reduxThunk from 'redux-thunk';
 
 import reducers from './rootReducer';
 // import history from './history';
-import * as auth from './modules/auth';
-const { Auth, AUTH_USER } = auth;
+import { Auth, AUTH_USER } from './modules/auth';
+//const { Auth, AUTH_USER } = auth;
 
 // const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
