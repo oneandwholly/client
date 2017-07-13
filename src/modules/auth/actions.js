@@ -8,19 +8,17 @@ import {
 
 const ROOT_URL = "http://localhost:3090";
 
-export function signinUser({ email, password }) {
+export function signinUser({ username, password }) {
   return function(dispatch) {
 
     // Submit email/password to the server
-      axios.post(`${ROOT_URL}/signin`, { email, password })
+      axios.post(`${ROOT_URL}/signin`, { username, password })
           .then(response => {
               // If request is good..
               // - Update the state to indicate user is authenticated
               dispatch({ type: AUTH_USER })
               // - Save the JWT token
               localStorage.setItem('token', response.data.token);
-              // - redirect to the route /feature
-              history.push('/feature');
           })
           .catch(() => {
               // If request is bad..
@@ -45,4 +43,10 @@ export function signupUser({username, email, password }) {
                 dispatch(authError(response.data.error));
             });
     }
+}
+
+export function signoutUser() {
+    localStorage.removeItem('token');
+
+    return { type: UNAUTH_USER };
 }

@@ -33,6 +33,7 @@
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "material-ui": "^1.0.0-alpha.21",
+    "material-ui-icons": "^1.0.0-alpha.19",
     "react": "^15.6.1",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^15.6.1",

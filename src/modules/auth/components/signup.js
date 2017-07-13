@@ -48,7 +48,7 @@ class Signup extends Component {
                 {this.renderAlert()}
                 <button type="submit" className="btn btn-primary" disabled={submitting}>Sign up!</button>
             </div>
-            <button onClick={this.handleClick.bind(this)}>signin</button>
+            <a onClick={this.handleClick.bind(this)}>signin</a>
         </form>
     );
   }

@@ -10,7 +10,7 @@ import reduxThunk from 'redux-thunk';
 import reducers from './rootReducer';
 // import history from './history';
 import { Auth, AUTH_USER } from './modules/auth';
-//const { Auth, AUTH_USER } = auth;
+import BottomNav from './components/bottomNav';
 
 // const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 // const store = createStoreWithMiddleware(reducers);
@@ -29,7 +29,10 @@ ReactDOM.render(
   <MuiThemeProvider>
     <Provider store={store}>
       <BrowserRouter history={history}>
-        <Route path='/' component={Auth} />
+      <div>
+        <Route path='/' exact component={Auth} />
+        <BottomNav />
+        </div>
       </BrowserRouter>
     </Provider>
   </MuiThemeProvider>
