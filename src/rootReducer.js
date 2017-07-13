@@ -5,6 +5,7 @@ import * as auth from './modules/auth'
 const { authReducer } = auth;
 
 const rootReducer = combineReducers({
+  form: formReducer,
   auth: authReducer
 });
 
