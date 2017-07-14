@@ -1,41 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { withStyles, createStyleSheet } from 'material-ui/styles';
-import BottomNavigation, { BottomNavigationButton } from 'material-ui/BottomNavigation';
-import RestoreIcon from 'material-ui-icons/Restore';
-import FavoriteIcon from 'material-ui-icons/Favorite';
-import LocationOnIcon from 'material-ui-icons/LocationOn';
-import FolderIcon from 'material-ui-icons/Folder';
+import { Link } from 'react-router-dom';
 
-const styleSheet = createStyleSheet('LabelBottomNavigation', {
-  root: {
-    width: 500,
-  },
-});
-
-class LabelBottomNavigation extends Component {
-  state = {
-    index: 0,
-  };
-
-  handleChange = (event, index) => {
-    this.setState({ index });
-  };
+class BottomNav extends Component {
 
   render() {
     if (this.props.auth.authenticated) {
-      const classes = this.props.classes;
-      const { index } = this.state;
-
       return (
-        <div className={classes.root}>
-        <BottomNavigation index={index} onChange={this.handleChange}>
-        <BottomNavigationButton label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationButton label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationButton label="Nearby" icon={<LocationOnIcon />} />
-        <BottomNavigationButton label="Folder" icon={<FolderIcon />} />
-        </BottomNavigation>
+        <div>
+          <button><Link to='/'>home</Link></button>
+          <button><Link to='/explore'>explore</Link></button>
+          <button><Link to='/create'>create</Link></button>
+          <button><Link to='/accounts/activity'>activity</Link></button>
+          <button><Link to='/'>profile</Link></button>
         </div>
       );
     } else {
@@ -44,12 +21,9 @@ class LabelBottomNavigation extends Component {
   }
 }
 
-LabelBottomNavigation.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
 
 function mapStateToProps({ auth }) {
   return { auth };
 }
 
-export default connect(mapStateToProps)(withStyles(styleSheet)(LabelBottomNavigation));
+export default connect(mapStateToProps)(BottomNav);

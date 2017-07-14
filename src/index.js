@@ -10,6 +10,7 @@ import reduxThunk from 'redux-thunk';
 import reducers from './rootReducer';
 // import history from './history';
 import { Auth, AUTH_USER } from './modules/auth';
+import { Create } from './modules/create';
 import BottomNav from './components/bottomNav';
 
 // const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
@@ -31,6 +32,7 @@ ReactDOM.render(
       <BrowserRouter history={history}>
       <div>
         <Route path='/' exact component={Auth} />
+        <Route path='/create' exact component={Create} />
         <BottomNav />
         </div>
       </BrowserRouter>
