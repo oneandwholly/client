@@ -3,6 +3,7 @@ import axios from 'axios';
 const ROOT_URL = "http://localhost:3090";
 
 export function upload(data, cb) {
+  console.log(data)
   return function(dispatch) {
 
     Date.prototype.toBasicISOString = function() {

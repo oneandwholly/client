@@ -59,6 +59,8 @@ class AddNewPost extends Component {
             name={FILE_FIELD_NAME}
             component={renderDropzoneInput}
           />
+          <label>description:</label>
+          <Field name="description" component="textarea" type="text" />
         </div>
         <div>
           <button type="submit">
